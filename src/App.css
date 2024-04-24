@@ -1,0 +1,231 @@
+/* Инфа обо мне */
+.header{
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	padding: 0 calc((100% - 1260px) / 2);
+}
+.header h1{
+	width: 50%;
+	text-align: right;
+}
+.profile{
+	display: flex;
+	align-items: center;
+	gap: 32px;
+}
+.avatar{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+}
+.avatar-image{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.username{
+	display: flex;
+	flex-direction: column;
+}
+
+/* компонент рейтинг */
+.rating{
+	display: flex;
+	gap: 16px;
+}
+.rating-stars{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.rating-stars__item img{
+	width: 20px;
+}
+/* стандартная кнопка */
+.default-button{
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	padding: 8px 16px;
+}
+.default-button:hover{
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+/* inactive card */
+.inactive-card{
+	opacity: 0.5;
+}
+/* навыки */
+.skills{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 32px;
+	padding: 0 calc((100% - 1260px) / 2);
+}
+.skills-card{
+	position: relative;
+	flex: 0 0 calc(33.33% - 32px * 2 / 3);
+	background-color: aliceblue;
+	padding: 16px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	padding-bottom: 32px;
+	min-height: 400px;
+}
+ /* настройка рейтинга для карточки рейтинга */
+.skills-card .rating{
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+}
+.skills-card__title{
+	width: 80%;
+}
+/* че я хочу выучить */
+.wt-learn-filter{
+	display: flex;
+	justify-content: end;
+	gap: 16px;
+	width: 100%;
+	padding: 0 calc((100% - 1260px) / 2);
+}
+.wt-learn{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 0 calc((100% - 1260px) / 2);
+	gap: 32px;
+}
+.wt-learn-card{
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	padding: 24px 64px;
+	background-color:antiquewhite;
+	border-radius: 8px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	transition: opacity .1s ease-in;
+}
+.wt-learn-card__title{
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	height: 32px;
+	width: 25%;
+}
+.wt-learn-card__title-icon{
+	width: 64px;
+	overflow: hidden;
+}
+.wt-learn-card__title-text{
+	padding: 0;
+	margin: 0;
+}
+.wt-learn-card__comment{
+	display: flex;
+	width: 50%;
+}
+.wt-learn-card .rating{
+	display: flex;
+	justify-content: end;
+	width: 25%;
+}
+/* def control button */
+.def-control-button{
+	background-color: transparent;
+	border: none;
+	color: rgba(0, 0, 0, 0.6);
+	transition: color .2s ease-in;
+	font-size: 14px;
+}
+.def-control-button:hover{
+	cursor: pointer;
+	color: #000;
+}
+.control-buttons{
+	position: absolute;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	opacity: 0;
+	transition: opacity .2s ease-in;
+}
+.skills-card:hover .control-buttons,
+.wt-learn-card:hover .control-buttons{
+	opacity: 1;
+}
+.skills-card .control-buttons{
+	right: 32px;
+	top: 48px;
+}
+.wt-learn-card .control-buttons{
+	flex-direction: column-reverse;
+	align-items: center;
+	justify-content: space-between;
+	right: 16px;
+	top: 16px;
+}
+/* add card button */
+.add-card-button{
+	background-color: rgba(240, 248, 255, 0.1);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.03);
+	color:rgba(0, 0, 0, 0.3);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 32px;
+}
+.add-card-button:hover{
+	background-color: rgba(240, 248, 255, 0.2);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+	color:rgba(0, 0, 0, 0.5);
+	cursor: pointer;
+}
+/* add skills card */
+.add-skills-card-form{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+.add-skills-card-form__item{
+	width: 60%;
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 4px 8px;
+	font-size: 16px;
+}
+.add-skills-card-form__item:active{
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
+/* add wt learn card */
+.add-wt-learn-card-form{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+.add-wt-learn-card-form__item{
+	border-radius: 4px;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 4px 8px;
+	font-size: 16px;
+}
+.add-wt-learn-card-form__rating{
+	width: 48px;
+}
+.add-wt-learn-card-form__item:active{
+	border: 1px solid rgba(0, 0, 0, 0.2);
+}
